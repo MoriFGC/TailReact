@@ -1,8 +1,14 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 function SingleBook({book}) {
+    const [selected, setSelected] = useState(false);
+
   return (
-    <div className='bg-slate-800 h-[425px] w-[250px] text-white mx-auto rounded-[10px]'>
+    <div 
+        style={{border: selected ? '2px solid blue' : 'none'}}
+        onClick={() => setSelected(!selected) }
+        className='bg-slate-800 h-[425px] w-[250px] text-white mx-auto rounded-[10px]
+    '>
             <div className='h-[300px] w-full'>
                 <img className='w-full h-full rounded-t-[10px]' src={book.img} alt="book" />
             </div>
