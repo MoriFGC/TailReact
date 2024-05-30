@@ -5,7 +5,7 @@ function SingleBook({book}) {
 
   return (
     <div 
-        style={{border: selected ? '2px solid pink' : 'none'}}
+        style={{border: selected ? '4px solid magenta' : 'none'}}
         onClick={() => setSelected(!selected) }
         className='bg-slate-800 h-[425px] w-[250px] text-white mx-auto rounded-[10px]
     '>
