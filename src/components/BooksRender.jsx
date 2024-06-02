@@ -16,5 +16,5 @@ export default function BooksRender({type}) {
     {type === 'horror' && <AllTheBooks books = {horror} />}
     </>
     
-  )
-}
+  );
+};
