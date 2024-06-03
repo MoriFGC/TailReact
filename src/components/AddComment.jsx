@@ -37,6 +37,8 @@
          .catch((error) =>
              console.error("Errore", error)
            )
+
+           
      }
 
    return (
@@ -55,6 +57,7 @@
                <option value={5}>5</option>
              </select>
              <button className='bg-slate-800 text-pink-400 hover:bg-pink-400 hover:text-slate-800 h-[40px] font-bold'  onClick={createComment}>Create</button>
+             
      </form>
    )
  }
