@@ -3,7 +3,7 @@
  function SingleBook({book}) {
      const [selected, setSelected] = useState(false);
    return (
-    <div className='w-[250px]'>
+    <div className='w-[250px] mx-auto'>
         <div 
          style={{border: selected ? '4px solid magenta' : 'none'}}
          onClick={() => setSelected(!selected) }
