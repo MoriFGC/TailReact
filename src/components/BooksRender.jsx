@@ -6,14 +6,15 @@ import romance from "/Books/romance.json";
 import scifi from "/Books/scifi.json";
 import AllTheBooks from './AllTheBooks'
 
-export default function BooksRender({type}) {
+export default function BooksRender({type, text}) {
+ 
   return (
     <>
-    {type === 'fantasy' && <AllTheBooks books = {fantasy} />}
-    {type === 'history' && <AllTheBooks books = {history} />}
-    {type === 'romance' && <AllTheBooks books = {romance} />}
-    {type === 'scifi' && <AllTheBooks books = {scifi} />}
-    {type === 'horror' && <AllTheBooks books = {horror} />}
+    {type === 'fantasy' && <AllTheBooks text={text} books = {fantasy} />}
+    {type === 'history' && <AllTheBooks text={text} books = {history} />}
+    {type === 'romance' && <AllTheBooks text={text} books = {romance} />}
+    {type === 'scifi' && <AllTheBooks text={text} books = {scifi} />}
+    {type === 'horror' && <AllTheBooks text={text}books = {horror} />}
     </>
     
   );

@@ -11,6 +11,8 @@
      .then(() => setComments(comments.filter(comment => comment._id !== commentId)))
      .catch(error => console.error("Errore", error));
    }
+
+
    const updateComment = (commentId, newComment, newRate) => {
      fetch(url + commentId, {
        method: 'PUT',
@@ -24,6 +26,7 @@
      .then(data => setComments(comments.map(comment => comment._id === commentId ? data : comment)))
      .catch(error => console.error("Errore", error));
    }
+   
     return (
         <li key={comment._id} className="flex justify-between">
            <span>{comment.comment}</span>

@@ -1,4 +1,4 @@
-import { Fragment } from 'react'
+
 import {
   Disclosure,
   DisclosureButton,
@@ -11,6 +11,9 @@ import {
 } from '@headlessui/react'
 import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline'
 
+import SearchBar from './SearchBar.jsx'
+
+
 const navigation = [
   { name: 'Home', href: '#', current: true },
   { name: 'About', href: '#', current: false },
@@ -21,7 +24,10 @@ function classNames(...classes) {
   return classes.filter(Boolean).join(' ')
 }
 
-export default function NavBar2() {
+export default function NavBar2({text, setText}) {
+
+  const handleText = (e) => setText(e.target.value)
+  
   return (
     <Disclosure as="nav" className="bg-slate-900">
       {({ open }) => (
@@ -41,12 +47,13 @@ export default function NavBar2() {
                 </DisclosureButton>
               </div>
               <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
-                <div className="flex flex-shrink-0 items-center">
+                <div className="flex  flex-shrink-0 gap-3 items-center">
                   <img
                     className="h-8 w-auto"
                     src="src\assets\react.svg"
                     alt="TailReact"
                   />
+                  <SearchBar text = {text} handleText = {handleText}/>
                 </div>
                 <div className="hidden sm:ml-6 sm:block">
                   <div className="flex space-x-4">
@@ -63,8 +70,9 @@ export default function NavBar2() {
                         {item.name}
                       </a>
                     ))}
-                  </div>
+                  </div>                  
                 </div>
+                
               </div>
               <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
                 <button
@@ -75,6 +83,7 @@ export default function NavBar2() {
                   <span className="sr-only">View notifications</span>
                   <BellIcon className="h-6 w-6" aria-hidden="true" />
                 </button>
+                
 
                 {/* Profile dropdown */}
                 <Menu as="div" className="relative ml-3">

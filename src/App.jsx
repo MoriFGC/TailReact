@@ -10,15 +10,17 @@ import BooksRender from './components/BooksRender';
 
 function App() {
 
-  const [type, setType] = useState('fantasy');
+  
+const [text, setText] = useState('');
+const [type, setType] = useState('fantasy');
 
   
   return (
     <>
-      <NavBar2 />
+      <NavBar2 text={text} setText={setText}/>
       <Welcome />
       <Button setType={setType} />
-      <BooksRender type={type} />
+      <BooksRender type={type} text={text}/>
       <Footer />
     </>
   )
