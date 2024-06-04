@@ -13,7 +13,7 @@
       e.preventDefault();
 
          console.log('fammi vedere se funge', {
-          text: valoreInput,
+          comment: valoreInput,
           rate: rate,
           elementId: asin
       });
