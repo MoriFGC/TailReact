@@ -1,14 +1,21 @@
- import React, { useState } from 'react'
+ import React, { useContext } from 'react'
  import CommentArea from './CommentArea';
- function SingleBook({book}) {
-     const [selected, setSelected] = useState(false);
+import { ThemeContext } from '../modules/Modules';
+
+ function SingleBook({selected, setSelected, book}) {
+
+    function classNames(...classes) {
+        return classes.filter(Boolean).join(' ')
+      }
+     
+     let [themeCtx] = useContext(ThemeContext);
+     
    return (
     <div className='w-[250px] mx-auto'>
         <div 
-         style={{border: selected ? '4px solid magenta' : 'none'}}
-         onClick={() => setSelected(!selected) }
-         className='bg-slate-800 h-[425px] w-[250px] text-white mx-auto rounded-[10px]
-     '>
+         style={{border: selected === book.asin ? '4px solid magenta' : 'none'}}
+         onClick={() => setSelected(book.asin) }
+         className={classNames(' h-[425px] w-[250px]  mx-auto rounded-[10px]', themeCtx === 'dark' ? 'bg-slate-800 text-white' : 'bg-slate-100')}>
              <div className='h-[300px] w-full'>
                  <img className='w-full h-full rounded-t-[10px]' src={book.img} alt="book" />
              </div>
@@ -24,7 +31,6 @@
                  </span>
              </div>
          </div>
-         {selected && <CommentArea asin = {book.asin} />}
     </div>
      
          

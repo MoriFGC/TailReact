@@ -1,4 +1,5 @@
- import React, { useState } from 'react'
+ import React, { useContext, useState } from 'react'
+import { ThemeContext } from '../modules/Modules';
 
  const key = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjNjY2M2NzgxODQ0MjAwMTUzNzU3NWIiLCJpYXQiOjE3MTczNDU2NzAsImV4cCI6MTcxODU1NTI3MH0.QvsJVXMuTEcw1P38lKHWZeQZP1l6JaA3TN38wAUntGw';
  const url = 'https://striveschool-api.herokuapp.com/api/comments/';
@@ -7,6 +8,13 @@
 
      const [valoreInput, setValoreInput] = useState('')
      const [rate, setRate] = useState(0)
+
+     function classNames(...classes) {
+      return classes.filter(Boolean).join(' ')
+    }
+  
+  
+    let [themeCtx, setThemeCtx] = useContext(ThemeContext);
 
      const createComment = (e) => {
 
@@ -56,7 +64,7 @@
                <option value={4}>4</option>
                <option value={5}>5</option>
              </select>
-             <button className='bg-slate-800 text-pink-400 hover:bg-pink-400 hover:text-slate-800 h-[40px] font-bold'  onClick={createComment}>Create</button>
+             <button className={classNames(' text-pink-400 hover:bg-pink-400 hover:text-slate-800 h-[40px] font-bold', themeCtx === 'dark' ? 'bg-slate-800' : 'bg-slate-100')}  onClick={createComment}>Create</button>
              
      </form>
    )
