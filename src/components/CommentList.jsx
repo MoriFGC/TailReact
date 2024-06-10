@@ -10,7 +10,7 @@ export default function CommentList({comments,  setComments}) {
       }
     
     
-      let [themeCtx, setThemeCtx] = useContext(ThemeContext);
+      let [themeCtx] = useContext(ThemeContext);
 
     return (
         <>

@@ -9,7 +9,7 @@ function classNames(...classes) {
 
 export default function SearchBar({text, handleText}) {
 
-  let [themeCtx, setThemeCtx] = useContext(ThemeContext);
+  let [themeCtx] = useContext(ThemeContext);
 
   return (
     <div className={classNames('w-[150px] md:w-[250px] rounded-[10px] h-[2.5rem] py-[0px] px-[15px] flex items-center', themeCtx === 'dark' ? 'bg-white' : 'bg-slate-800 text-white')}>
