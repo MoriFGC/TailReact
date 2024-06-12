@@ -1,11 +1,11 @@
 import './App.css'
 import Footer from './components/Footer'
-import Welcome from './components/Welcome'
 import NavBar2 from './components/NavBar2'
 import { useState } from 'react';
-import Button from './components/Button';
-import BooksRender from './components/BooksRender';
 import { ThemeContext } from './modules/Modules';
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Home from './pages/Home';
+import Pagina404 from './pages/Page404';
 
 
 
@@ -19,15 +19,18 @@ const [type, setType] = useState('fantasy');
 const [theme, setTheme] = useState('dark')
   
   return (
-    <>
+    <Router>
      <ThemeContext.Provider value={[theme, setTheme]}>
       <NavBar2 text={text} setText={setText}/>
-      <Welcome />
-      <Button setType={setType} />
-      <BooksRender type={type} text={text}/>
+
+      <Routes>
+        <Route path='/' element ={ <Home text={text} type={type} setType={setType} />}></Route>
+        <Route path='*' element ={<Pagina404 />}></Route>
+      </Routes>
+
       <Footer />
      </ThemeContext.Provider>
-    </>
+    </Router>
   )
 }
 

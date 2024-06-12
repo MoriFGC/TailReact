@@ -1,5 +1,4 @@
- import React, { useContext } from 'react'
- import CommentArea from './CommentArea';
+import React, { useContext } from 'react'
 import { ThemeContext } from '../modules/Modules';
 
  function SingleBook({selected, setSelected, book}) {

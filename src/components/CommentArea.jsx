@@ -29,12 +29,13 @@ import Spinner from './Spinner';
          
      }, [asin])
    return (
+    
      <>
-     <div className='flex flex-col'>  
-     <AddComment comments ={comments} setComments={setComments} asin={asin}/>
-     {spinner && <Spinner />}
-     <CommentList comments ={comments} asin={asin} setComments={setComments}/>
-     </div>
+      {asin && <div className='flex flex-col'>  
+       <AddComment comments ={comments} setComments={setComments} asin={asin}/>
+       {spinner && <Spinner />}
+       <CommentList comments ={comments} asin={asin} setComments={setComments}/>
+       </div>}
      </>
      
    )

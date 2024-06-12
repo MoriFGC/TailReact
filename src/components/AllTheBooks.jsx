@@ -9,7 +9,7 @@ import CommentArea from './CommentArea';
   return (
     <>
       
-      <main className='flex justify-around  mt-5'>
+      <main className='flex justify-evenly  mt-5'>
         <div className='grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-3'>
           {books.filter(book => book.title.toLowerCase().includes(text))
          .map((book) => ( 
@@ -18,9 +18,9 @@ import CommentArea from './CommentArea';
          selected={selected} 
          setSelected={setSelected}/>))}
         </div>
-         <div >
-          <CommentArea asin = {selected} />
-         </div>
+         
+          <CommentArea  asin = {selected}/> 
+         
       </main>
     </>
     
