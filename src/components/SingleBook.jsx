@@ -1,7 +1,14 @@
 import React, { useContext } from 'react'
 import { ThemeContext } from '../modules/Modules';
+import { useNavigate } from 'react-router-dom';
 
  function SingleBook({selected, setSelected, book}) {
+
+    const navigate = useNavigate();
+
+    function goToDetails(id) {
+        navigate(`/details/${id}`);
+    }
 
     function classNames(...classes) {
         return classes.filter(Boolean).join(' ')
@@ -14,7 +21,7 @@ import { ThemeContext } from '../modules/Modules';
         <div 
          style={{border: selected === book.asin ? '4px solid magenta' : 'none'}}
          onClick={() => setSelected(book.asin) }
-         className={classNames(' h-[425px] w-[250px]  mx-auto rounded-[10px]', themeCtx === 'dark' ? 'bg-slate-800 text-white' : 'bg-slate-100')}>
+         className={classNames(' h-[450px] w-[250px]  mx-auto rounded-[10px]', themeCtx === 'dark' ? 'bg-slate-800 text-white' : 'bg-slate-100')}>
              <div className='h-[300px] w-full'>
                  <img className='w-full h-full rounded-t-[10px]' src={book.img} alt="book" />
              </div>
@@ -28,6 +35,9 @@ import { ThemeContext } from '../modules/Modules';
                  <span className='text-gray-400 hover:text-pink-400'>
                      {book.price}$
                  </span>
+                 <button className='w-[80px] h-[30px] text-[15px] font-bold bg-pink-400 text-slate-800 hover:text-pink-400 hover:bg-slate-800 rounded-[20px]'  onClick={() => goToDetails(book.asin)}>
+                    Details
+                 </button>
              </div>
          </div>
     </div>

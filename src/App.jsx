@@ -6,6 +6,7 @@ import { ThemeContext } from './modules/Modules';
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from './pages/Home';
 import Pagina404 from './pages/Page404';
+import BookDetails from './pages/BookDetails';
 
 
 
@@ -26,6 +27,7 @@ const [theme, setTheme] = useState('dark')
       <Routes>
         <Route path='/' element ={ <Home text={text} type={type} setType={setType} />}></Route>
         <Route path='*' element ={<Pagina404 />}></Route>
+        <Route path='/details/:id' element ={<BookDetails />}></Route>
       </Routes>
 
       <Footer />
