@@ -47,7 +47,7 @@ const BookDetails = () => {
   }
 
   return (
-      <div className='w-[400px] my-5 mx-auto'>
+      <div className='w-[400px] mt-[50px] mb-[300px] mx-auto'>
         <div 
          className={classNames(' h-[450px] w-[250px] my-4 mx-auto rounded-[10px]', themeCtx === 'dark' ? 'bg-slate-800 text-white' : 'bg-slate-100')}>
              <div className='h-[300px] w-full'>
@@ -57,7 +57,7 @@ const BookDetails = () => {
                  <span className='text-center font-bold text-[20px] text-ellipsis whitespace-nowrap overflow-hidden w-full'>
                      {book.title}
                  </span>
-                 <span className='capitalize text-[15px] text-gray-400 hover:text-pink-400'>
+                 <span className={classNames('capitalize text-[15px]  hover:text-pink-400', themeCtx === 'dark' ? 'text-gray-400' : 'text-black')}>
                      {book.category}
                  </span>
                  <span className='text-gray-400 hover:text-pink-400'>

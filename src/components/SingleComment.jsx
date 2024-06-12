@@ -1,6 +1,16 @@
+import { useContext } from "react";
+import { ThemeContext } from "../modules/Modules";
+
  const key = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjNjY2M2NzgxODQ0MjAwMTUzNzU3NWIiLCJpYXQiOjE3MTczNDU2NzAsImV4cCI6MTcxODU1NTI3MH0.QvsJVXMuTEcw1P38lKHWZeQZP1l6JaA3TN38wAUntGw';
  const url = 'https://striveschool-api.herokuapp.com/api/comments/';
  export default function SingleComment({comment, setComments, comments}) {
+
+  function classNames(...classes) {
+    return classes.filter(Boolean).join(' ')
+  }
+
+  let [themeCtx] = useContext(ThemeContext);
+
    const deleteComment = (commentId) => {
      fetch(url + commentId, {
        method: 'DELETE',
@@ -28,7 +38,7 @@
    }
    
     return (
-        <li key={comment._id} className="flex justify-between">
+        <li key={comment._id} className={( themeCtx === 'dark' ? 'text-white flex  justify-between' : 'text-black flex  justify-between')}>
            <span>{comment.comment}</span>
            <div className="flex gap-1">
             <button className="text-pink-400" onClick={() => deleteComment(comment._id)}>Delete</button>

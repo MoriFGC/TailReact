@@ -35,7 +35,10 @@ import { useNavigate } from 'react-router-dom';
                  <span className='text-gray-400 hover:text-pink-400'>
                      {book.price}$
                  </span>
-                 <button className='w-[80px] h-[30px] text-[15px] font-bold bg-pink-400 text-slate-800 hover:text-pink-400 hover:bg-slate-800 rounded-[20px]'  onClick={() => goToDetails(book.asin)}>
+                 <button 
+                 className='w-[80px] h-[30px] text-[15px] font-bold bg-pink-400 text-slate-800 hover:text-pink-400 hover:bg-slate-800 rounded-[20px]'  
+                 onClick={() => goToDetails(book.asin)}
+                 >
                     Details
                  </button>
              </div>

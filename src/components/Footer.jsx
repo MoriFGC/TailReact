@@ -14,8 +14,8 @@ import { ThemeContext } from '../modules/Modules';
 
   return (
 
-<footer className={classNames('mt-4  bottom-0 w-full', themeCtx === 'dark' ? 'bg-slate-900' : 'bg-slate-100')}>
-    <div className="w-full max-w-screen-xl mx-auto p-4 md:py-8">
+<footer className={classNames('mt-4 fixed bottom-0 w-full', themeCtx === 'dark' ? 'bg-slate-900' : 'bg-slate-100')}>
+    <div className="w-full max-w-screen-xl mx-auto p-4">
         <div className="sm:flex sm:items-center sm:justify-between">
             <a href="#" className="flex items-center mb-4 sm:mb-0 space-x-3 rtl:space-x-reverse">
             <img src='src\assets\react.svg' alt='logo-react'/>
