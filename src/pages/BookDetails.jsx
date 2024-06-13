@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState  } from 'react'
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import { ThemeContext } from '../modules/Modules';
 import CommentArea from '../components/CommentArea';
 
@@ -63,9 +63,9 @@ const BookDetails = () => {
                  <span className='text-gray-400 hover:text-pink-400'>
                      {book.price}$
                  </span>
-                 <button className='w-[80px] h-[30px] text-[15px] font-bold bg-pink-400 text-slate-800 hover:text-pink-400 hover:bg-slate-800 rounded-[20px]'  onClick={() => goToDetails(book.asin)}>
-                    Details
-                 </button>
+                 <Link to='/' className='text-center p-[3px] w-[80px] h-[30px] text-[15px] font-bold bg-pink-400 text-slate-800 hover:text-pink-400 hover:bg-slate-800 rounded-[20px]'>
+                    Go Back
+                 </Link>
              </div>
          </div>
          <CommentArea asin = {id}/>
