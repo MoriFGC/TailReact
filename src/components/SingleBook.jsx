@@ -17,7 +17,7 @@ import { useNavigate } from 'react-router-dom';
      let [themeCtx] = useContext(ThemeContext);
      
    return (
-    <div className='w-[250px] mx-auto'>
+    <div className='w-[250px] mx-auto pippo' data-testid="card" >
         <div 
          style={{border: selected === book.asin ? '4px solid magenta' : 'none'}}
          onClick={() => setSelected(book.asin) }

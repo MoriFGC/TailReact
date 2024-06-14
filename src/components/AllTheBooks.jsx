@@ -3,6 +3,7 @@ import SingleBook from './SingleBook';
 import CommentArea from './CommentArea';
 
  function AllTheBooks({books, text}) {
+ 
 
   const [selected, setSelected] = useState(false);
 
@@ -13,14 +14,13 @@ import CommentArea from './CommentArea';
         <div className='grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3'>
           {books.filter(book => book.title.toLowerCase().includes(text))
          .map((book) => ( 
-         <SingleBook key={book.asin} 
+         <SingleBook  dataid='cards'
+         key={book.asin} 
          book = {book} 
          selected={selected} 
          setSelected={setSelected}/>))}
         </div>
-         
           <CommentArea  asin = {selected}/> 
-         
       </main>
     </>
     

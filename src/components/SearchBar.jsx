@@ -15,6 +15,7 @@ export default function SearchBar({text, handleText}) {
     <div className={classNames('w-[150px] md:w-[250px] rounded-[10px] h-[2.5rem] py-[0px] px-[15px] flex items-center', themeCtx === 'dark' ? 'bg-white' : 'bg-slate-800 text-white')}>
           <input className='bg-transparent border-none h-[100%] text-[1.25rem] w-[100%] ms-[5px] focus:outline-none'
           type='search'  
+          placeholder='Search...'
           value={text} 
           onChange={handleText}
           />
