@@ -38,8 +38,9 @@ import { ThemeContext } from "../modules/Modules";
    }
    
     return (
-        <li key={comment._id} className={( themeCtx === 'dark' ? 'text-white flex  justify-between' : 'text-black flex  justify-between')}>
-           <span>{comment.comment}</span>
+        <li data-testid ="comment" key={comment._id} 
+            className={( themeCtx === 'dark' ? 'text-white flex  justify-between' : 'text-black flex  justify-between')}>
+           <span>{comment.comment} Rate:{comment.rate}</span>
            <div className="flex gap-1">
             <button className="text-pink-400" onClick={() => deleteComment(comment._id)}>Delete</button>
             <button onClick={() => updateComment (comment._id, prompt('New Name:', comment.comment), prompt('New Rate', comment.rate))}>Update</button>

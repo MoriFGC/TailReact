@@ -14,7 +14,7 @@ import CommentArea from './CommentArea';
         <div className='grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3'>
           {books.filter(book => book.title.toLowerCase().includes(text))
          .map((book) => ( 
-         <SingleBook  dataid='cards'
+         <SingleBook 
          key={book.asin} 
          book = {book} 
          selected={selected} 

@@ -17,11 +17,11 @@ import { useNavigate } from 'react-router-dom';
      let [themeCtx] = useContext(ThemeContext);
      
    return (
-    <div className='w-[250px] mx-auto pippo' data-testid="card" >
+    <div className='w-[250px] mx-auto' data-testid="card" >
         <div 
-         style={{border: selected === book.asin ? '4px solid magenta' : 'none'}}
+          //style={{border: selected === book.asin ? '4px solid magenta' : 'none'}}
          onClick={() => setSelected(book.asin) }
-         className={classNames(' h-[450px] w-[250px]  mx-auto rounded-[10px]', themeCtx === 'dark' ? 'bg-slate-800 text-white' : 'bg-slate-100')}>
+         className={classNames('h-[450px] w-[250px]  mx-auto rounded-[10px] ciccio', themeCtx === 'dark' ? 'bg-slate-800 text-white' : 'bg-slate-100', selected === book.asin ? 'border-[4px] border-solid border-[magenta]' : 'none')}>
              <div className='h-[300px] w-full'>
                  <img className='w-full h-full rounded-t-[10px]' src={book.img} alt="book" />
              </div>
