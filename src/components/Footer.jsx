@@ -1,5 +1,6 @@
 import React, { useContext } from 'react'
 import { ThemeContext } from '../modules/Modules';
+import reactLogo from '../assets/react.svg';
 
  function Footer() {
 
@@ -18,7 +19,7 @@ import { ThemeContext } from '../modules/Modules';
     <div className="w-full max-w-screen-xl mx-auto p-4">
         <div className="sm:flex sm:items-center sm:justify-between">
             <a href="#" className="flex items-center mb-4 sm:mb-0 space-x-3 rtl:space-x-reverse">
-            <img src='src\assets\react.svg' alt='logo-react'/>
+            <img src={reactLogo} alt='logo-react'/>
                 <span className={classNames("self-center text-2xl font-semibold whitespace-nowrap ", themeCtx === 'dark' ? 'text-white' : '')}>Tailreact</span>
             </a>
             <ul className={classNames("flex flex-wrap items-center mb-6 text-sm font-medium  sm:mb-0", themeCtx === 'dark' ? 'text-gray-400' : 'text-gray-500')}>

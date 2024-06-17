@@ -2,7 +2,6 @@ import { fireEvent, getAllByTestId, render, screen, waitFor } from "@testing-lib
 import Welcome from "./Welcome";
 import fantasy from '../../Books/fantasy.json';
 import App from "../App";
-import AllTheBooks from "./AllTheBooks";
 import { expect } from "vitest";
 
 

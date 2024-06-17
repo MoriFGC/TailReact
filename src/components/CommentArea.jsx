@@ -2,9 +2,7 @@
  import AddComment from './AddComment';
  import CommentList from './CommentList';
 import Spinner from './Spinner';
-
- const key = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjNjY2M2NzgxODQ0MjAwMTUzNzU3NWIiLCJpYXQiOjE3MTg1NjUzMzYsImV4cCI6MTcxOTc3NDkzNn0.DWqeOIt3TRb7kWyVlZpY29NFwnjtFEPz1e4XNhL02fk';
- const url = 'https://striveschool-api.herokuapp.com/api/books/';
+import ApiAxios from '../modules/ApiAxios';
 
  export default function CommentArea  ({  asin }) {
 
@@ -15,27 +13,22 @@ import Spinner from './Spinner';
 
       setSpinner(true)
 
-         fetch(url + asin + '/comments/', {
-             headers: {
-                 'Authorization': `Bearer ${key}`
-             }
-         })
-         .then((response) => response.json())
-         .then((data) => {
-          setComments(data),
+        ApiAxios('/books/' + asin + '/comments/')
+        .then(response => {
+          setComments(response.data),
           setSpinner(false)
-         })
-         .catch(error => console.error('Errore:',error))
+        })
+        .catch(error => console.error('Error:', error))
          
      }, [asin])
    return (
     
      <>
-      {asin && <div className='flex flex-col'>  
+      {asin && <>  
        <AddComment comments ={comments} setComments={setComments} asin={asin}/>
        {spinner && <Spinner />}
        <CommentList comments ={comments} asin={asin} setComments={setComments}/>
-       </div>}
+       </>}
      </>
      
    )

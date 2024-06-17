@@ -17,7 +17,8 @@ import SearchBar from './SearchBar.jsx'
 import { useContext } from 'react'
 import { ThemeContext } from '../modules/Modules.jsx'
 import { Link } from 'react-router-dom'
-
+import reactLogo from '../assets/react.svg';
+import profileImage from '../assets/IMG_4893.jpg';
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(' ')
@@ -55,7 +56,7 @@ export default function NavBar2({ text, setText }) {
                 <div className="flex flex-shrink-0 gap-3 items-center">
                   <img
                     className="h-8 w-auto"
-                    src="src/assets/react.svg"
+                    src={reactLogo}
                     alt="TailReact"
                   />
                   <SearchBar text={text} handleText={handleText} />
@@ -93,7 +94,7 @@ export default function NavBar2({ text, setText }) {
                       <span className="sr-only">Open user menu</span>
                       <img
                         className="h-[30px] w-[30px] rounded-full"
-                        src="src/assets/IMG_4893.jpg"
+                        src={profileImage}
                         alt="img-user"
                       />
                     </MenuButton>

@@ -47,9 +47,9 @@ const BookDetails = () => {
   }
 
   return (
-      <div className='w-[400px] mt-[50px] mb-[300px] mx-auto'>
+      <div className='block lg:flex lg:justify-around w-[100%] mt-[50px] mb-[300px] mx-auto'>
         <div 
-         className={classNames(' h-[450px] w-[250px] my-4 mx-auto rounded-[10px]', themeCtx === 'dark' ? 'bg-slate-800 text-white' : 'bg-slate-100')}>
+         className={classNames(' h-[450px] w-[250px] mx-auto lg:mx-0 rounded-[10px]', themeCtx === 'dark' ? 'bg-slate-800 text-white' : 'bg-slate-100')}>
              <div className='h-[300px] w-full'>
                  <img className='w-full h-full rounded-t-[10px]' src={book.img} alt="book" />
              </div>
@@ -68,7 +68,9 @@ const BookDetails = () => {
                  </Link>
              </div>
          </div>
-         <CommentArea asin = {id}/>
+         <div className='mt-[150px]'>
+            <CommentArea asin = {id} />
+         </div>
     </div>
   );
 };

@@ -20,7 +20,10 @@ import CommentArea from './CommentArea';
          selected={selected} 
          setSelected={setSelected}/>))}
         </div>
+        <div className='hidden md:flex md:flex-col'>
           <CommentArea  asin = {selected}/> 
+        </div>
+          
       </main>
     </>
     
